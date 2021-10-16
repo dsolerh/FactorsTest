@@ -26,5 +26,32 @@ namespace FactorsTest
                 Assert.Equal(expected[i], result[i]);
             }
         }
+
+        [Fact]
+        public void TestPrimeFactors()
+        {
+            // arrange
+            int[] x = { 1, 2, 10, 40, 50 };
+            int[][] expected = {
+                new[] {1},
+                new[] {2},
+                new[] {2,5},
+                new[] {2,2,2,5},
+                new[] {2,5,5}
+             };
+
+            // act
+            int[][] result = new int[5][];
+            for (int i = 0; i < 5; i++)
+            {
+                result[i] = Factors.PrimeFactors(x[i]);
+            }
+
+            // assert
+            for (int i = 0; i < 5; i++)
+            {
+                Assert.Equal(expected[i], result[i]);
+            }
+        }
     }
 }
